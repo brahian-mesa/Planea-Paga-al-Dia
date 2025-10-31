@@ -1,0 +1,17 @@
+# Etapa de desarrollo de Next.js
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Instalar dependencias
+COPY package*.json ./
+RUN npm install
+
+# Copiar el resto del código
+COPY . .
+
+# Exponer puerto interno
+EXPOSE 3000
+
+# Comando para desarrollo
+CMD ["npm", "run", "dev"]

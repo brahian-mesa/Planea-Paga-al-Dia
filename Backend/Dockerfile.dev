@@ -1,0 +1,17 @@
+# Etapa de desarrollo de Express + TypeScript
+FROM node:20-alpine
+
+WORKDIR /app
+
+# Instalar dependencias
+COPY package*.json ./
+RUN npm install
+
+# Copiar el resto del código fuente
+COPY . .
+
+# Exponer puerto interno
+EXPOSE 4000
+
+# Comando para desarrollo (usa nodemon o ts-node-dev)
+CMD ["npm", "run", "dev"]

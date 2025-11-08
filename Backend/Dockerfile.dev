@@ -11,7 +11,7 @@ RUN npm install
 COPY . .
 
 # Exponer puerto interno
-EXPOSE 4000
+EXPOSE 8080
 
 # Comando para desarrollo (usa nodemon o ts-node-dev)
 CMD ["npm", "run", "dev"]
